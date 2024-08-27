@@ -1,5 +1,7 @@
 "use client";
 
+import { Loader, LogOut } from "lucide-react";
+import { useAuthActions } from "@convex-dev/auth/react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   DropdownMenu,
@@ -7,9 +9,8 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useCurrentUser } from "../hooks/use-current-user";
-import { Loader, LogOut } from "lucide-react";
-import { useAuthActions } from "@convex-dev/auth/react";
+
+import { useCurrentUser } from "../api/use-current-user";
 
 export const UserButton = () => {
   const { signOut } = useAuthActions();
