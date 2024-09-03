@@ -9,6 +9,7 @@ import { useCurrentMember } from "@/features/members/api/use-current-member";
 
 import { Id } from "../../convex/_generated/dataModel";
 import { Loader } from "lucide-react";
+import { ConversationHero } from "./conversation-hero";
 
 // 5 min after message become non-compact
 const TIME_THRESHOLD = 5;
@@ -139,6 +140,9 @@ export const MessageList = ({
       )}
       {variant === "channel" && channelName && channelCreationTime && (
         <ChannelHero name={channelName} creationTime={channelCreationTime} />
+      )}
+      {variant === "conversation" && (
+        <ConversationHero name={memberName} image={memberImage} />
       )}
     </div>
   );
